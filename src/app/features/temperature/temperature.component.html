@@ -1,0 +1,39 @@
+<div class="monitor-container" [class.alarm-state]="isAlarmActive()">
+  
+    <div class="status-card">
+      
+      <div class="card-header">
+        <div class="status-dot" [style.background-color]="getTemperatureStatusColor()"></div>
+        <h2>Anlık Sıcaklık Takibi</h2>
+      </div>
+  
+      <div class="temp-display">
+        <div class="value" [style.color]="getTemperatureStatusColor()">
+          {{ currentData()?.temperature ?? '--' }}<span class="unit">°C</span>
+        </div>
+        <p class="time-info">
+          Son Güncelleme: {{ currentData()?.createdAt | date:'HH:mm:ss' }}
+        </p>
+      </div>
+  
+      <div class="progress-container">  
+        <div class="progress-bar" 
+             [style.width.%]="currentData()?.temperature" 
+             [style.background-color]="getTemperatureStatusColor()">
+        </div>
+      </div>
+  
+      <div *ngIf="isAlarmActive()" class="alert-box pulse">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-text">
+          <strong>KRİTİK SICAKLIK: {{ currentData()?.temperature }}°C</strong>
+          <span>Sistem alarm logu veritabanına kaydedildi.</span>
+        </div>
+      </div>
+  
+      <div class="info-footer">
+        <small>Eşik Değeri: {{ threshold }}°C | Durum: {{ isAlarmActive() ? 'Kritik' : 'Normal' }}</small>
+      </div>
+  
+    </div>
+  </div>

@@ -1,0 +1,167 @@
+
+.monitor-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  transition: all 0.5s ease;
+  
+  &.alarm-state {
+    background-color: rgba(211, 47, 47, 0.05);
+    animation: shake 0.5s infinite; 
+  }
+}
+
+.status-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 400px; 
+  border-top: 5px solid #388e3c;
+  transition: border-top-color 0.3s ease; 
+}
+
+.alarm-state .status-card {
+  border-top-color: #d32f2f;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite; 
+}
+
+.temp-display {
+  text-align: center;
+  margin: 1.5rem 0;
+  
+  .value { 
+    font-size: 4rem; 
+    font-weight: 800;
+    transition: color 0.3s ease; 
+    line-height: 1; 
+  }
+  
+  .unit { 
+    font-size: 1.5rem; 
+    margin-left: 5px;
+    opacity: 0.7; 
+  }
+
+  .time-info { 
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.progress-container {  
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+
+  .progress-bar {
+    height: 100%;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+  }
+}
+
+.alert-box {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); 
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0; 
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4); 
+
+  .alert-icon { 
+    font-size: 32px;
+  }
+
+  .alert-text { 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    strong {
+      font-size: 18px;
+    }
+
+    span {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+  }
+}
+
+.info-footer { 
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+
+  small {
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+// ============= ANIMASYONLAR =============
+
+// Alert box pulse
+.pulse {
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.6);
+  }
+}
+
+// Status dot pulse
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+// Shake animation for state
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
