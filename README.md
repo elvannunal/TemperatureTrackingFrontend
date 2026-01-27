@@ -1,59 +1,47 @@
-# TemperatureTrackingFrontend
+<img width="1463" height="800" alt="Ekran Resmi 2026-01-27 19 40 47" src="https://github.com/user-attachments/assets/007f5d0e-06bd-4029-bf8d-9289826dc977" /># 📊 Temperature Tracking Dashboard (Angular 19)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Bu proje, bir backend servisinden **SignalR** aracılığıyla gelen gerçek zamanlı sıcaklık verilerini görselleştiren, modern ve reaktif bir kullanıcı arayüzüdür.
 
-## Development server
+## 🌟 Öne Çıkan Özellikler
 
-To start a local development server, run:
+* **Angular 19 & Signals:** Uygulama içi durum yönetimi ve UI güncellemeleri için Angular'ın en güncel reaktif programlama tekniği olan **Signals** mimarisi kullanılmıştır.
+* **Gerçek Zamanlı Veri Akışı:** SignalR client entegrasyonu sayesinde sayfa yenilenmesine gerek kalmadan veriler saniyelik (real-time) olarak güncellenir.
+* **Dinamik Renk Kodlaması:** Sıcaklık değerine göre UI bileşenleri otomatik olarak renk değiştirerek kullanıcıya görsel geri bildirim sağlar:
+    * 🟢 **Yeşil:** Güvenli seviye (0°C - 60°C).
+    * 🟠 **Turuncu:** Uyarı seviyesi (60°C - 80°C).
+    * 🔴 **Kırmızı:** Kritik seviye (80°C ve üzeri).
+* **Akıllı Alarm Bildirimi:** Sıcaklık **80°C** eşiğini geçtiğinde reaktif bir uyarı kartı ve animasyonlu alarm gösterimi devreye girer.
 
-```bash
-ng serve
-```
+## 🛠️ Kullanılan Teknolojiler
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Framework:** Angular 19 (Standalone Components)
+* **State Management:** Angular Signals & Computed Properties
+* **Communication:** Microsoft SignalR Client
+* **Styling:** SCSS (BEM Methodology & Flexbox)
+* **Optimization:** NgZone (Asenkron veri senkronizasyonu)
 
-## Code scaffolding
+## 📸 Ekran Görüntüsü
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Aşağıda, sistemin canlı veri akışı sırasında çekilmiş bir görüntüsü yer almaktadır:
 
-```bash
-ng generate component component-name
-```
+<img width="1470" height="798" alt="Ekran Resmi 2026-01-27 19 40 59" src="https://github.com/user-attachments/assets/eacf6e89-9bcd-424d-93ff-4388ee75cdfa" />
+<img width="1463" height="800" alt="Ekran Resmi 2026-01-27 19 40 47" src="https://github.com/user-attachments/assets/e6969400-2533-4763-b8c4-eca93c9e7782" />
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
 
-## Building
+## 🚀 Kurulum ve Çalıştırma
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  **Depoyu Klonlayın:**
+    ```bash
+    git clone [https://github.com/elvannunal/TemperatureTrackingFrontend.git](https://github.com/elvannunal/TemperatureTrackingFrontend.git)
+    ```
+2.  **Bağımlılıkları Yükleyin:**
+    ```bash
+    npm install
+    ```
+3.  **Uygulamayı Başlatın:**
+    ```bash
+    npm start
+    ```
+4.  **Tarayıcıda Görüntüleyin:**
+    `http://localhost:4200` adresine gidin. (Backend servisinin çalıştığından emin olun.)
