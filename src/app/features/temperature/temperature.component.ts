@@ -27,7 +27,6 @@ export class TemperatureComponent {
 
   public isAlarmActive = computed(() => {debugger
     const data = this.currentData();
-    console.log( "--<", data)
     return data ? this.temperatureService.checkAlarmStatus(data.temperature) : false;
   });
 

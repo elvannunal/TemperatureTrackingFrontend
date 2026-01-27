@@ -29,7 +29,6 @@ export class SignalrService {
 
     this.hubConnection.on('ReceiveTemperature', (tempValue: number) => {
       this.zone.run(() => { 
-        console.log('Backendden gelen ham veri:', tempValue);
         const data: TemperatureData = {
           temperature: tempValue,
           createdAt: new Date(),
