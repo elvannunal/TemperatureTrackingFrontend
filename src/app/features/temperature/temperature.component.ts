@@ -25,7 +25,7 @@ export class TemperatureComponent {
    *Sıcaklık değiştiğinde alarm durumunu otomatik hesapla
    */
 
-  public isAlarmActive = computed(() => {debugger
+  public isAlarmActive = computed(() => {
     const data = this.currentData();
     return data ? this.temperatureService.checkAlarmStatus(data.temperature) : false;
   });

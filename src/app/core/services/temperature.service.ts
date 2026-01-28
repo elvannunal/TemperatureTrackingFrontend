@@ -18,7 +18,6 @@ export class TemperatureService {
 
   getAlarmLogs(): Observable<TemperatureData[]> {
     return this.http.get<TemperatureData[]>(this.apiUrl).pipe(
-      // Sadece apiUrl kullan, /alarms ekleme!
       catchError(error => {
         console.error('Alarm logları çekilirken hata oluştu:', error);
         return throwError(() => new Error('Veri çekme hatası.'));
